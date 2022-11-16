@@ -128,7 +128,7 @@ const Form = props => {
     <div className="carousel-caption text-start text-bg-dark">
     <p className = "text-center text-bg-dark fs-3">Matematicas</p>
     <p className="text-center">
-    <p className="justify-content-center text-align-center"><button className="btn btn-lg btn-primary btn btn-lg btn-primary" onClick={changeHiddenForm}>Jugar</button></p>
+    <p className="btn btn-warning"><a href="#ingles" className="nav-link px-2 text-dark">Jugar</a></p>
     </p>
     </div>
     </div>
@@ -140,7 +140,7 @@ const Form = props => {
     <div className="carousel-caption text-end">
     <p className="text-center">
     <p className="text-center fs-3">Historia Argentina</p>
-    <p><button className="btn btn-lg btn-primary btn btn-lg btn-primary" onClick={changeHiddenForm}>Jugar</button></p>
+    <p className="btn btn-warning"><a href="#historiarg" className="nav-link px-2 text-dark">Jugar</a></p>
     </p>
     </div>
     </div>
@@ -152,7 +152,7 @@ const Form = props => {
     <div className="carousel-caption text-end">
     <p className="text-center">
     <p className="text-center fs-3">Marvel</p>
-    <p><button className="btn btn-lg btn-primary btn btn-lg btn-primary" onClick={changeHiddenForm}>Jugar</button></p>
+    <p className="btn btn-warning"><a href="#marvel" className="nav-link px-2 text-dark">Jugar</a></p>
     </p>
     </div>
     </div>
@@ -164,7 +164,7 @@ const Form = props => {
     <div className="carousel-caption">
     <h1>Preguntados la35</h1>
     <p>Para jugar y elegir el tema de las preguntas o preguntar pase la pagina</p>
-    <button className="btn btn-lg btn-primary btn btn-lg btn-primary" onClick={changeHiddenForm}>¡Sorprendeme!</button>
+    <p className="btn btn-warning"><a href="#random" className="nav-link px-2 text-dark">¡Sorprendeme!</a></p>
     </div>
     </div>
     </div>
@@ -175,7 +175,7 @@ const Form = props => {
     <div className="carousel-caption text-end">
     <p className="text-center">
     <p className="text-center fs-3">Dragon Ball</p>
-    <p><button className="btn btn-lg btn-primary btn btn-lg btn-primary" onClick={changeHiddenForm}>Jugar</button></p>
+    <p className="btn btn-warning"><a href="#db" className="nav-link px-2 text-dark">Jugar</a></p>
     </p>
     </div>
     </div>
@@ -185,11 +185,11 @@ const Form = props => {
 
     <div className="container">
     <div className="carousel-caption text-end">
+    </div>
     <p className="text-center">
     <p className="text-center fs-3">Ingles</p>
-    <p><button className="btn btn-lg btn-primary btn btn-lg btn-primary" onClick={changeHiddenForm}>Jugar</button></p>
+    <p className="btn btn-warning"><a href="#ingles" className="nav-link px-2 text-dark">Jugar</a></p>
     </p>
-    </div>
     </div>
     </div>
     <div className="carousel-item">
@@ -199,7 +199,7 @@ const Form = props => {
     <div className="carousel-caption text-end">
     <p className="text-center">
     <p className="text-center fs-3">Ajedrez</p>
-    <p><button className="btn btn-lg btn-primary btn btn-lg btn-primary" onClick={changeHiddenForm}>Jugar</button></p>
+    <p className="btn btn-warning"><a href="#ajedrez" className="nav-link px-2 text-dark">Jugar</a></p>
     </p>
     </div>
     </div>
@@ -215,6 +215,7 @@ const Form = props => {
     </button>
     </div>
 
+    <div className="text-bg-dark"><svg></svg></div>
     <div className="text-bg-dark"hidden={!hiddenForm}>
     <div className="text-center">
       <button className="btn btn-warning" onClick={changeHiddenForm}>Hacer Pregunta</button>
@@ -223,7 +224,7 @@ const Form = props => {
       </svg>
     </div>
 
-    <div className="text-bg-dark text-center" hidden={hiddenForm}>
+    <div id="preguntas"className="text-bg-dark text-center" hidden={hiddenForm}>
       <button  onClick={changeHiddenForm}>Me arrepentí</button>
       <br/>
       <label>¿Cúal es tu pregunta? : </label>
@@ -237,20 +238,18 @@ const Form = props => {
         />
       <br />
       <br />
+      <label>Respuesta 1:</label>
       <input
-        id="floatingInput"
         type="text"
         name="answer1"
         required
         onChange={e => setTemp5({...temp5, text1: e.target.value})}
-        value= {temp5.text1}
+        value={temp5.text1}
       />
-      <label html="floatingInput">Respuesta 1</label>
-
       <input name="qsy" onChange={handleChange} type="radio" />
       <br />
       <br />
-      <label>Respuesta 2: </label>
+      <label>Respuesta 2:</label>
       <input
         type="text"
         name="answer2"
@@ -262,7 +261,7 @@ const Form = props => {
       <br />
       <br />
 
-      <label>Respuesta 3: </label>
+      <label>Respuesta 3:</label>
       <input
         type="text"
         name="answer3"
@@ -274,7 +273,7 @@ const Form = props => {
       <br />
       <br />
 
-      <label>Respuesta 4: </label>
+      <label>Respuesta 4:</label>
       <input
         type="text"
         name="answer4"
@@ -285,8 +284,36 @@ const Form = props => {
       <input name="qsy" onChange={handleChange} type="radio" />
       <br />
 
-      <button onClick={addAnswer}>Mandar </button>
+      <button onClick={addAnswer, changeHiddenForm}>Mandar</button>
       </div>
+      <div className="text-bg-dark"> <svg></svg></div>
+
+      <div id="random" className="text-bg-dark text-center"><p className="btn btn-warning"><a href="#" className="nav-link px-2 text-dark">volver</a></p></div>
+
+      <div className="text-bg-dark"> <svg></svg></div>
+
+
+      <div id="db" className="text-bg-dark text-center"><p className="btn btn-warning"><a href="#" className="nav-link px-2 text-dark">volver</a></p></div>
+
+      <div className="text-bg-dark"> <svg></svg></div>
+
+      <div id="ingles" className="text-bg-dark text-center"><p className="btn btn-warning"><a href="#" className="nav-link px-2 text-dark">volver</a></p></div>
+
+      <div className="text-bg-dark"> <svg></svg></div>
+
+      <div id="ajedrez" className="text-bg-dark text-center"><p className="btn btn-warning"><a href="#" className="nav-link px-2 text-dark">volver</a></p></div>
+
+      <div className="text-bg-dark text-center"> <svg></svg></div>
+
+      <div id="matematicas" className="text-bg-dark text-center"><p className="btn btn-warning"><a href="#" className="nav-link px-2 text-dark">volver</a></p></div>
+
+      <div className="text-bg-dark"> <svg></svg></div>
+
+      <div id="historiarg" className="text-bg-dark text-center"><p className="btn btn-warning"><a href="#" className="nav-link px-2 text-dark">volver</a></p></div>
+
+      <div className="text-bg-dark"> <svg></svg></div>
+
+      <div id="marvel" className="text-bg-dark text-center"><p className="btn btn-warning"><a href="#" className="nav-link px-2 text-dark">volver</a></p></div>
       </form>
     </div>
   );
