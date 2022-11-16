@@ -11,7 +11,13 @@ return(
       <li className="nav-item"><i className="bi bi-star text-warning"></i><a href="#" className="nav-link px-2 text-muted"></a></li>
 
     </ul>
-    <p className="text-center">Preguntados La35</p>
+    <p>Hecho por:</p>
+    <p>Antezana Valentin</p>
+    <p>Heredia Federico</p>
+    <p>Lesta Ignacio</p>
+    <p>Perez Enzo</p>
+    <p>Urriza Byron</p>
+    <p className="text-center fs-5">Preguntados La35</p>
   </footer>
 </div>
 </div>

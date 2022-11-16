@@ -9,8 +9,8 @@ const header = () => {
       <h4>
       Preguntados
       <button className="btn btn-warning">
-      <h4>
-      La35
+      <h4><a className="nav-link px-2 btn btn-warning">La35</a>
+
       </h4>
       </button>
       </h4>

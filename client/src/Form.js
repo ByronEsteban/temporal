@@ -3,109 +3,65 @@ import axios from 'axios';
 
 const Form = props => {
 
-  const [hiddenForm, setHiddenForm] = useState(true);
+const [hiddenForm, setHiddenForm] = useState(true);
+const changeHiddenForm = () => {
+  setHiddenForm(prev => !prev)
+}
 
-  const changeHiddenForm = () => {
-    setHiddenForm(prev => !prev)
-  }
 
-  const [hiddenRandom, setHiddenRandom] = useState(true);
+  const [answerData, setAnswerData] = useState([
+      {text: 'MArsupial', correct: false},
+      {text: '', correct: false},
+      {text: '', correct: false},
+      {text: '', correct: false}]);
 
-  const changeHiddenRandom = () => {
-    setHiddenForm(prev => !prev)
-  }
+    console.log(answerData);
+    console.log(answerData[0]);
 
-  const [hiddenMatematica, setHiddenMatematica] = useState(true);
-
-  const changeHiddenMatematica = () => {
-    setHiddenForm(prev => !prev)
-  }
-
-  const [hiddenIngles, setHiddenIngles] = useState(true);
-
-  const changeHiddenIngles = () => {
-    setHiddenForm(prev => !prev)
-  }
-
-  const [hiddenAjedrez, setHiddenAjedrez] = useState(true);
-
-  const changeHiddenAjedrez = () => {
-    setHiddenForm(prev => !prev)
-  }
-
-  const [hiddenDb, setHiddenDb] = useState(true);
-
-  const changeHiddenDb = () => {
-    setHiddenForm(prev => !prev)
-  }
-
-  const [hiddenMarvel, setHiddenMarvel] = useState(true);
-
-  const changeHiddenMarvel = () => {
-    setHiddenForm(prev => !prev)
-  }
-
-  const [hiddenMf, setHiddenMf] = useState(true);
-
-  const changeHiddenMf = () => {
-    setHiddenForm(prev => !prev)
-  }
-
-  const [hiddenArg, setHiddenArg] = useState(true);
-
-  const changeHiddenArg = () => {
-    setHiddenForm(prev => !prev)
-  }
-
-  const [answerData, setAnswerData] = useState({
-    answer1: {text: '', correct: false},
-    answer2: {text: '', correct: false},
-    answer3: {text: 'pINGUINO RA', correct: false},
-    answer4: {text: '', correct: false}
-  });
-
-  const [formData, setFormData] = useState({
-    text: '',
-    answers: [answerData]
-  });
-  const [temp5, setTemp5] = useState({
-    text: '', text1: '', text2: '', text3: '', text4: ''
-  });
-
-  const handleSubmit = e => {
-    e.preventDefault();
-    console.log('Sending data to server...', formData);
-  };
-
-  // const handleRadio = e => {
-  //   console.log(e.target.previousSibling.name);
-  //   const name = e.target.previousSibling.name;
-  // }
-
-  const handleChange = e => {
-    const name = e.target.previousSibling.name;
-    answerData.answer1.correct = false;
-    answerData.answer2.correct = false;
-    answerData.answer3.correct = false;
-    answerData.answer4.correct = false;
-    answerData[name].correct = true;
-    console.log(answerData.answer1.correct);
-    console.log(answerData.answer2.correct);
-    console.log(answerData.answer3.correct);
-    console.log(answerData.answer4.correct);
-  };
-
-  const addAnswer = e => {
-    setFormData({...formData, text: temp5.text});
-    answerData.answer1.text = temp5.text1;
-    answerData.answer2.text = temp5.text2;
-    answerData.answer3.text = temp5.text3;
-    answerData.answer4.text = temp5.text4;
-    axios.post('/question/preguntas', formData)
-      .then(res => {
-        setTemp5({text: '', text1: '', text2: '', text3: '', text4: ''});
+    const [formData, setFormData] = useState({
+      text: '',
+      tema: '',
+      answers: answerData
     });
-  };
+
+    console.log(formData);
+
+    const [temp, setTemp] = useState({
+      text: '', tema: '', text1: '', text2: '', text3: '', text4: ''
+    });
+
+    const handleSubmit = e => {
+      e.preventDefault();
+      console.log('Sending data to server...', formData);
+    };
+
+    const handleChange = e => {
+      const name = e.target.previousSibling.name;
+      console.log(name);
+      // const prevname = name;
+      for (let i = 0; i < 4; i++)
+        answerData[i].correct = false;
+        answerData[name].correct = true;
+
+      console.log(answerData);
+    };
+
+    const prueba = e => {
+      temp.tema = e.target.value;
+    };
+
+    const addAnswer = e => {
+      formData.text = temp.text;
+      formData.tema = temp.tema;
+      answerData[0].text = temp.text1;
+      answerData[1].text = temp.text2;
+      answerData[2].text = temp.text3;
+      answerData[3].text = temp.text4;
+      axios.post('/question/preguntas', formData)
+        .then(res => {setTemp({text: '', tema: '', text1: '', text2: '', text3: '', text4: ''});
+      });
+      console.log(formData);
+    };
 
   return (
     <div>
@@ -185,11 +141,11 @@ const Form = props => {
 
     <div className="container">
     <div className="carousel-caption text-end">
-    </div>
     <p className="text-center">
     <p className="text-center fs-3">Ingles</p>
     <p className="btn btn-warning"><a href="#ingles" className="nav-link px-2 text-dark">Jugar</a></p>
     </p>
+    </div>
     </div>
     </div>
     <div className="carousel-item">
@@ -225,68 +181,89 @@ const Form = props => {
     </div>
 
     <div id="preguntas"className="text-bg-dark text-center" hidden={hiddenForm}>
-      <button  onClick={changeHiddenForm}>Me arrepentí</button>
+
+      <button className="btn btn-warning" onClick={changeHiddenForm}>Me arrepentí</button>
+      <br/>
+      <br/>
+      <select onChange={prueba}>
+        <option>Seleccionar Tema</option>
+        <option>Matemática</option>
+        <option>Inglés</option>
+        <option>Historia</option>
+        <option>Dragon Ball</option>
+        <option>Fulbo</option>
+        <option>Marvel</option>
+      </select>
+      <br/>
       <br/>
       <label>¿Cúal es tu pregunta? : </label>
       <br />
       <input
+
         required
         type="text"
         name="text"
-        onChange={e => setTemp5({...temp5, text: e.target.value})}
-        value={temp5.text}
-        />
+        onChange={e => setTemp({...temp, text: e.target.value})}
+        value={temp.text}
+      />
+      <div className="rectangle">
       <br />
-      <br />
-      <label>Respuesta 1:</label>
+      <label>Respuesta 1: </label>
+      <br/>
       <input
+        className="text-bg-danger"
         type="text"
-        name="answer1"
+        name= "0"
         required
-        onChange={e => setTemp5({...temp5, text1: e.target.value})}
-        value={temp5.text1}
+        onChange={e => setTemp({...temp, text1: e.target.value})}
+        value={temp.text1}
       />
       <input name="qsy" onChange={handleChange} type="radio" />
       <br />
-      <br />
-      <label>Respuesta 2:</label>
+      <label>Respuesta 2: </label>
+      <br/>
       <input
+        className="text-bg-danger"
         type="text"
-        name="answer2"
+        name="1"
         required
-        onChange={e => setTemp5({...temp5, text2: e.target.value})}
-        value={temp5.text2}
-      />
-      <input name="qsy" onChange={handleChange} type="radio" />
-      <br />
-      <br />
-
-      <label>Respuesta 3:</label>
-      <input
-        type="text"
-        name="answer3"
-        required
-        onChange={e => setTemp5({...temp5, text3: e.target.value})}
-        value={temp5.text3}
-      />
-      <input name="qsy" onChange={handleChange} type="radio" />
-      <br />
-      <br />
-
-      <label>Respuesta 4:</label>
-      <input
-        type="text"
-        name="answer4"
-        required
-        onChange={e => setTemp5({...temp5, text4: e.target.value})}
-        value={temp5.text4}
+        onChange={e => setTemp({...temp, text2: e.target.value})}
+        value={temp.text2}
       />
       <input name="qsy" onChange={handleChange} type="radio" />
       <br />
 
-      <button onClick={addAnswer, changeHiddenForm}>Mandar</button>
+      <label>Respuesta 3: </label>
+      <br/>
+      <input
+        className="text-bg-danger"
+        type="text"
+        name="2"
+        required
+        onChange={e => setTemp({...temp, text3: e.target.value})}
+        value={temp.text3}
+      />
+      <input name="qsy" onChange={handleChange} type="radio" />
+      <br />
+
+      <label>Respuesta 4: </label>
+      <br/>
+      <input
+        className="text-bg-danger"
+        type="text"
+        name="3"
+        required
+        onChange={e => setTemp({...temp, text4: e.target.value})}
+        value={temp.text4}
+      />
+      <input name="qsy" onChange={handleChange} type="radio" />
+      <br />
+      <br/>
+      <button className="btn btn-warning"onClick={addAnswer,changeHiddenForm}>Mandar</button>
+      <br/>
+      <br/>
       </div>
-      <div className="text-bg-dark"> <svg></svg></div>
+      </div>
 
       <div id="random" className="text-bg-dark text-center"><p className="btn btn-warning"><a href="#" className="nav-link px-2 text-dark">volver</a></p></div>
 
