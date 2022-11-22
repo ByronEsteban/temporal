@@ -67,7 +67,7 @@ const changeHiddenForm = () => {
     <div>
     <form onSubmit={handleSubmit}>
     <div id="myCarousel" className="carousel slide text-bg-dark" data-bs-ride="carousel">
-    <div className="carousel-indicators text-bg-dark">
+    <div className="carousel-indicators text-bg-dark h-0">
     <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" className="" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
     <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" className=""></button>
@@ -81,7 +81,7 @@ const changeHiddenForm = () => {
     <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"></svg>
 
     <div className="container">
-    <div className="carousel-caption text-start text-bg-dark">
+    <div className="carousel-caption text-start text-bg-dark h-100">
     <p className = "text-center text-bg-dark fs-3">Matematicas</p>
     <p className="text-center">
     <p className="btn btn-warning"><a href="#ingles" className="nav-link px-2 text-dark">Jugar</a></p>
@@ -93,7 +93,7 @@ const changeHiddenForm = () => {
     <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"></svg>
 
     <div className="container">
-    <div className="carousel-caption text-end">
+    <div className="carousel-caption text-end h-100">
     <p className="text-center">
     <p className="text-center fs-3">Historia Argentina</p>
     <p className="btn btn-warning"><a href="#historiarg" className="nav-link px-2 text-dark">Jugar</a></p>
@@ -105,7 +105,7 @@ const changeHiddenForm = () => {
     <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"></svg>
 
     <div className="container">
-    <div className="carousel-caption text-end">
+    <div className="carousel-caption text-end h-100">
     <p className="text-center">
     <p className="text-center fs-3">Marvel</p>
     <p className="btn btn-warning"><a href="#marvel" className="nav-link px-2 text-dark">Jugar</a></p>
@@ -117,10 +117,9 @@ const changeHiddenForm = () => {
     <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"></svg>
 
     <div className="container">
-    <div className="carousel-caption">
+    <div className="carousel-caption h-100">
     <h1>Preguntados la35</h1>
-    <p>Para jugar y elegir el tema de las preguntas o preguntar pase la pagina</p>
-    <p className="btn btn-warning"><a href="#random" className="nav-link px-2 text-dark">¡Sorprendeme!</a></p>
+    <p className="btn btn-warning"><a href="#random" className="nav-link px-2 text-dark h-100">¡Jugar!</a></p>
     </div>
     </div>
     </div>
@@ -128,7 +127,7 @@ const changeHiddenForm = () => {
     <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"></svg>
 
     <div className="container">
-    <div className="carousel-caption text-end">
+    <div className="carousel-caption text-end h-100">
     <p className="text-center">
     <p className="text-center fs-3">Dragon Ball</p>
     <p className="btn btn-warning"><a href="#db" className="nav-link px-2 text-dark">Jugar</a></p>
@@ -140,7 +139,7 @@ const changeHiddenForm = () => {
     <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"></svg>
 
     <div className="container">
-    <div className="carousel-caption text-end">
+    <div className="carousel-caption text-end h-100">
     <p className="text-center">
     <p className="text-center fs-3">Ingles</p>
     <p className="btn btn-warning"><a href="#ingles" className="nav-link px-2 text-dark">Jugar</a></p>
@@ -152,7 +151,7 @@ const changeHiddenForm = () => {
     <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"></svg>
 
     <div className="container">
-    <div className="carousel-caption text-end">
+    <div className="carousel-caption text-end h-100">
     <p className="text-center">
     <p className="text-center fs-3">Ajedrez</p>
     <p className="btn btn-warning"><a href="#ajedrez" className="nav-link px-2 text-dark">Jugar</a></p>
@@ -187,19 +186,20 @@ const changeHiddenForm = () => {
       <br/>
       <select onChange={prueba}>
         <option>Seleccionar Tema</option>
-        <option>Matemática</option>
-        <option>Inglés</option>
-        <option>Historia</option>
         <option>Dragon Ball</option>
-        <option>Fulbo</option>
         <option>Marvel</option>
+        <option>Inglés</option>
+        <option>DC</option>
+        <option>Stranger Things</option>
+        <option>The Walking Dead</option>
+        <option>4to 4ta</option>
       </select>
-      <br/>
-      <br/>
+      <br />
+      <br />
       <label>¿Cúal es tu pregunta? : </label>
       <br />
       <input
-
+        className="cetp"
         required
         type="text"
         name="text"
@@ -211,24 +211,25 @@ const changeHiddenForm = () => {
       <label>Respuesta 1: </label>
       <br/>
       <input
-        className="text-bg-danger"
+
+        className="respuesta1"
         type="text"
         name= "0"
         required
         onChange={e => setTemp({...temp, text1: e.target.value})}
-        value={temp.text1}
+        value= {temp.text1}
       />
       <input name="qsy" onChange={handleChange} type="radio" />
       <br />
       <label>Respuesta 2: </label>
       <br/>
       <input
-        className="text-bg-danger"
+        className="respuesta2"
         type="text"
         name="1"
         required
         onChange={e => setTemp({...temp, text2: e.target.value})}
-        value={temp.text2}
+        value={temp.text.t2}
       />
       <input name="qsy" onChange={handleChange} type="radio" />
       <br />
@@ -236,7 +237,7 @@ const changeHiddenForm = () => {
       <label>Respuesta 3: </label>
       <br/>
       <input
-        className="text-bg-danger"
+        className="respuesta3"
         type="text"
         name="2"
         required
@@ -249,7 +250,7 @@ const changeHiddenForm = () => {
       <label>Respuesta 4: </label>
       <br/>
       <input
-        className="text-bg-danger"
+        className="respuesta4"
         type="text"
         name="3"
         required
@@ -265,32 +266,7 @@ const changeHiddenForm = () => {
       </div>
       </div>
 
-      <div id="random" className="text-bg-dark text-center"><p className="btn btn-warning"><a href="#" className="nav-link px-2 text-dark">volver</a></p></div>
 
-      <div className="text-bg-dark"> <svg></svg></div>
-
-
-      <div id="db" className="text-bg-dark text-center"><p className="btn btn-warning"><a href="#" className="nav-link px-2 text-dark">volver</a></p></div>
-
-      <div className="text-bg-dark"> <svg></svg></div>
-
-      <div id="ingles" className="text-bg-dark text-center"><p className="btn btn-warning"><a href="#" className="nav-link px-2 text-dark">volver</a></p></div>
-
-      <div className="text-bg-dark"> <svg></svg></div>
-
-      <div id="ajedrez" className="text-bg-dark text-center"><p className="btn btn-warning"><a href="#" className="nav-link px-2 text-dark">volver</a></p></div>
-
-      <div className="text-bg-dark text-center"> <svg></svg></div>
-
-      <div id="matematicas" className="text-bg-dark text-center"><p className="btn btn-warning"><a href="#" className="nav-link px-2 text-dark">volver</a></p></div>
-
-      <div className="text-bg-dark"> <svg></svg></div>
-
-      <div id="historiarg" className="text-bg-dark text-center"><p className="btn btn-warning"><a href="#" className="nav-link px-2 text-dark">volver</a></p></div>
-
-      <div className="text-bg-dark"> <svg></svg></div>
-
-      <div id="marvel" className="text-bg-dark text-center"><p className="btn btn-warning"><a href="#" className="nav-link px-2 text-dark">volver</a></p></div>
       </form>
     </div>
   );
