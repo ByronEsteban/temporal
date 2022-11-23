@@ -66,38 +66,27 @@ const changeHiddenForm = () => {
   return (
     <div>
     <form onSubmit={handleSubmit}>
-    <div id="myCarousel" className="carousel slide text-bg-dark" data-bs-ride="carousel">
-    <div className="carousel-indicators text-bg-dark h-0">
+    <div className="form">
+    <div id="myCarousel" className="carousel slide" data-bs-ride="carousel">
+    <div className="carousel-indicators  h-0">
     <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" className="" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" className=""></button>
-    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4" className="active" aria-current="true"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" className="active"></button>
+    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4" className="" aria-current=""></button>
     <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="4" aria-label="Slide 5" className=""></button>
-    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="5" aria-label="Slide 6" className=""></button>
-    <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="6" aria-label="Slide 7" className=""></button>
     </div>
-    <div className="carousel-inner text-bg-dark">
+    <div className="carousel-inner ">
     <div className="carousel-item">
     <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"></svg>
 
-    <div className="container">
-    <div className="carousel-caption text-start text-bg-dark h-100">
-    <p className = "text-center text-bg-dark fs-3">Matematicas</p>
+    <div className="container ">
+    <div className="carousel-caption text-start  h-100">
+    <p className = "text-center  fs-3">Antezana Valentin</p>
+    <div>
     <p className="text-center">
-    <p className="btn btn-warning"><a href="#ingles" className="nav-link px-2 text-dark">Jugar</a></p>
+    <a className="btn btn-warning" href="https://github.com/AntezanaValentin">AntezanaValentin</a>
     </p>
     </div>
-    </div>
-    </div>
-    <div className="carousel-item">
-    <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"></svg>
-
-    <div className="container">
-    <div className="carousel-caption text-end h-100">
-    <p className="text-center">
-    <p className="text-center fs-3">Historia Argentina</p>
-    <p className="btn btn-warning"><a href="#historiarg" className="nav-link px-2 text-dark">Jugar</a></p>
-    </p>
     </div>
     </div>
     </div>
@@ -105,32 +94,33 @@ const changeHiddenForm = () => {
     <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"></svg>
 
     <div className="container">
-    <div className="carousel-caption text-end h-100">
-    <p className="text-center">
-    <p className="text-center fs-3">Marvel</p>
-    <p className="btn btn-warning"><a href="#marvel" className="nav-link px-2 text-dark">Jugar</a></p>
+    <div className="carousel-caption text-end h-100 ">
+    <p className="text-center ">
+    <p className="text-center fs-3 ">Byron Urriza</p>
+    <p className="btn btn-warning"><a href="https://github.com/ByronEsteban" className="nav-link px-2 text-dark">ByronEsteban</a></p>
     </p>
     </div>
     </div>
     </div>
+
     <div className="carousel-item active">
     <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"></svg>
 
-    <div className="container">
-    <div className="carousel-caption h-100">
+    <div className="container ">
+    <div className="carousel-caption h-100 ">
     <h1>Preguntados la35</h1>
-    <p className="btn btn-warning"><a href="#random" className="nav-link px-2 text-dark h-100">¡Jugar!</a></p>
+    <p className="btn btn-warning"><a href="#preguntas" className="nav-link px-2 text-dark h-100">¡Subir preguntas!</a></p>
     </div>
     </div>
     </div>
-    <div className="carousel-item">
+    <div className="carousel-item ">
     <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"></svg>
 
     <div className="container">
-    <div className="carousel-caption text-end h-100">
-    <p className="text-center">
-    <p className="text-center fs-3">Dragon Ball</p>
-    <p className="btn btn-warning"><a href="#db" className="nav-link px-2 text-dark">Jugar</a></p>
+    <div className="carousel-caption text-end h-100 ">
+    <p className="text-center ">
+    <p className="text-center fs-3">Federico Heredia</p>
+    <p className="btn btn-warning"><a href="https://github.com/FedericoHeredia28" className="nav-link px-2 text-dark">FedericoHeredia28</a></p>
     </p>
     </div>
     </div>
@@ -141,20 +131,8 @@ const changeHiddenForm = () => {
     <div className="container">
     <div className="carousel-caption text-end h-100">
     <p className="text-center">
-    <p className="text-center fs-3">Ingles</p>
-    <p className="btn btn-warning"><a href="#ingles" className="nav-link px-2 text-dark">Jugar</a></p>
-    </p>
-    </div>
-    </div>
-    </div>
-    <div className="carousel-item">
-    <svg className="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"></svg>
-
-    <div className="container">
-    <div className="carousel-caption text-end h-100">
-    <p className="text-center">
-    <p className="text-center fs-3">Ajedrez</p>
-    <p className="btn btn-warning"><a href="#ajedrez" className="nav-link px-2 text-dark">Jugar</a></p>
+    <p className="text-center fs-3">Ignacio Lesta</p>
+    <p className="btn btn-warning"><a href="https://github.com/elpeckelesta" className="nav-link px-2 text-dark">ElPeckeLesta</a></p>
     </p>
     </div>
     </div>
@@ -169,9 +147,10 @@ const changeHiddenForm = () => {
     <span className="visually-hidden">Next</span>
     </button>
     </div>
+    </div>
 
-    <div className="text-bg-dark"><svg></svg></div>
-    <div className="text-bg-dark"hidden={!hiddenForm}>
+    <div className="nobody" id="preguntas" hidden={!hiddenForm}>
+    <svg></svg>
     <div className="text-center">
       <button className="btn btn-warning" onClick={changeHiddenForm}>Hacer Pregunta</button>
       </div>
@@ -179,12 +158,13 @@ const changeHiddenForm = () => {
       </svg>
     </div>
 
-    <div id="preguntas"className="text-bg-dark text-center" hidden={hiddenForm}>
-
+    <div className="formulario text-center" hidden={hiddenForm}>
+      <br/>
+      <br/>
       <button className="btn btn-warning" onClick={changeHiddenForm}>Me arrepentí</button>
       <br/>
       <br/>
-      <select onChange={prueba}>
+      <select className="cetpop text-center"onChange={prueba}>
         <option>Seleccionar Tema</option>
         <option>Dragon Ball</option>
         <option>Marvel</option>
@@ -196,10 +176,10 @@ const changeHiddenForm = () => {
       </select>
       <br />
       <br />
-      <label>¿Cúal es tu pregunta? : </label>
+      <label >¿Cúal es tu pregunta? : </label>
       <br />
       <input
-        className="cetp"
+        className="cetp text-center"
         required
         type="text"
         name="text"
@@ -212,55 +192,55 @@ const changeHiddenForm = () => {
       <br/>
       <input
 
-        className="respuesta1"
+        className="respuesta1 text-center"
         type="text"
         name= "0"
         required
         onChange={e => setTemp({...temp, text1: e.target.value})}
         value= {temp.text1}
       />
-      <input name="qsy" onChange={handleChange} type="radio" />
+      <input className="input"name="qsy" onChange={handleChange} type="radio" />
       <br />
       <label>Respuesta 2: </label>
       <br/>
       <input
-        className="respuesta2"
+        className="respuesta2 text-center"
         type="text"
         name="1"
         required
         onChange={e => setTemp({...temp, text2: e.target.value})}
         value={temp.text.t2}
       />
-      <input name="qsy" onChange={handleChange} type="radio" />
+      <input className="input"name="qsy" onChange={handleChange} type="radio" />
       <br />
 
       <label>Respuesta 3: </label>
       <br/>
       <input
-        className="respuesta3"
+        className="respuesta3 text-center"
         type="text"
         name="2"
         required
         onChange={e => setTemp({...temp, text3: e.target.value})}
         value={temp.text3}
       />
-      <input name="qsy" onChange={handleChange} type="radio" />
+      <input className="input"name="qsy" onChange={handleChange} type="radio" />
       <br />
 
       <label>Respuesta 4: </label>
       <br/>
       <input
-        className="respuesta4"
+        className="respuesta4 text-center"
         type="text"
         name="3"
         required
         onChange={e => setTemp({...temp, text4: e.target.value})}
         value={temp.text4}
       />
-      <input name="qsy" onChange={handleChange} type="radio" />
+      <input className="input"name="qsy" onChange={handleChange} type="radio" />
       <br />
       <br/>
-      <button className="btn btn-warning"onClick={addAnswer,changeHiddenForm}>Mandar</button>
+      <button className="btn btn-warning" onClick={addAnswer,changeHiddenForm}>Mandar</button>
       <br/>
       <br/>
       </div>

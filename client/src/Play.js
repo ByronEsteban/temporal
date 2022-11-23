@@ -82,7 +82,7 @@ const Play = props => {
     const { text, tema, answers } = props.question;
 
     return (
-      <div name="Callate Amparo">
+      <div>
         <h2>{text}</h2>
         {answers.map((answer, idx) => (
           <div key={idx}>
@@ -108,42 +108,48 @@ const Play = props => {
 
   return (
 
-    <div className="text-bg-dark text-center" hidden={hiddenForm}>
-
-        <button className="btn btn-warning" onClick={changeHiddenForm}> HOLA </button>
-
-        <br />
-        <br/>
-        <select id="select" onChange={e => {document.getElementById('jugar').disabled = false}}>
-          <option>Seleccionar Tema</option>
-          <option>Dragon Ball</option>
-          <option>Marvel</option>
-          <option>Inglés</option>
-          <option>DC</option>
-          <option>Stranger Things</option>
-          <option>The Walking Dead</option>
-          <option>4to 4ta</option>
-        </select>
-        <br/>
-        <br/>
-        <input className="btn btn-warning"id="jugar" type="button" value="Jugar" onClick={handleClick}/>
-        <div>
-          {filteredQuestions.map((question,idx) => {
-            if (r === idx){
-              console.log(idx);
-              return (<div>
-                <Question key={idx} question={question} />
-                <input type="button" value="Enviar" onClick={sendAnswer} hidden={hidden}/>
-                <br /><br />
-                <label>Racha: {racha}</label>
-                <br /><br />
-                <input className="reintentar" type="button" value="Reintentar" onClick={tryAgain} hidden={!hidden}/>
-                </div>
-              )
-            }
+  <div className="text-center">
+  <div hidden={!hiddenForm}>
+  <br/>
+  <br/>
+  <button className="btn btn-warning" onClick={changeHiddenForm}>Jugar</button>
+  <br/>
+  <br/>
+  <br/>
+  </div>
+    <div hidden={ hiddenForm }>
+      <br />
+      <select className="selectem text-center"id="select" onChange={e => {document.getElementById('jugar').disabled = false}}>
+        <option className="selectemop">Seleccionar Tema</option>
+        <option className="dbop">Dragon Ball</option>
+        <option className="mop">Marvel</option>
+        <option className="ingop">Inglés</option>
+        <option className="dcop">DC</option>
+        <option className="stop">Stranger Things</option>
+        <option className="twdop">The Walking Dead</option>
+        <option className="44">4to 4ta</option>
+      </select>
+      <br/>
+      <br/>
+      <input className="btn btn-warning"id="jugar" type="button" value="Jugar" onClick={handleClick}/>
+      <div>
+        {filteredQuestions.map((question,idx) => {
+          if (r === idx){
+            console.log(idx);
+            return (<div>
+              <Question key={idx} question={question} />
+              <input type="button" value="Enviar" onClick={sendAnswer} hidden={hidden}/>
+              <br /><br />
+              <label>Racha: {racha}</label>
+              <br /><br />
+              <input className="reintentar" type="button" value="Reintentar" onClick={tryAgain} hidden={!hidden}/>
+              </div>
+            )
           }
-          )}
+        }
+        )}
         </div>
+      </div>
     </div>
   );
 }

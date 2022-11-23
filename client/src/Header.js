@@ -4,12 +4,12 @@ import React from 'react';
 const header = () => {
 
   return (
-    <header class="p-3 text-bg-dark">
-    <div className="text-center text-bg-dark">
-      <h4>
+    <header class="p-3">
+    <div className="header text-center">
+      <h4 className="titulo text-light">
       Preguntados
       <button className="btn btn-warning">
-      <h4><a className="nav-link px-2 btn btn-warning">La35</a>
+      <h4><a className="titulo nav-link px-2 btn btn-warning">La35</a>
 
       </h4>
       </button>

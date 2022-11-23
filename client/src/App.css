@@ -1,4 +1,8 @@
 
+.cetpop {
+  border-radius: 30px;
+}
+
 .cetp{
   border-radius: 10px;
 }
@@ -17,4 +21,27 @@
 
 .reintentar {
   border-radius:10px;
+}
+
+.selectem {
+  border-radius: 10px;
+}
+
+.formulario {
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUSNfJfTWqx6OKpQpNYfiDkQBa3jMrko-D2R5m64sWlcUk-NEV2icDALl1KtohBzW2pG8&usqp=CAU);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.App {
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSUSNfJfTWqx6OKpQpNYfiDkQBa3jMrko-D2R5m64sWlcUk-NEV2icDALl1KtohBzW2pG8&usqp=CAU);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+.play{
+  background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJfH1Kw-P5dB-i4qSV8XTxs-t0qBtgEUz_YQ&usqp=CAU);
+  background-size: cover;
+
 }
